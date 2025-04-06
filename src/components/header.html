@@ -1,0 +1,41 @@
+
+
+<header class="bg-texto px-6 md:px-20 py-4 flex items-center justify-between shadow-md h-18 relative" x-data="{ open: false }">
+  <!-- Logo -->
+  <a class="text-2xl text-textonav font-bold"><img class="w-14 h-14 cursor-pointer" src="./src/assets/images/PNG-LOGO-BEIGE.png" alt="Logo"></a>
+
+  <!-- Botón menú hamburguesa (visible solo en mobile) -->
+  <button @click="open = !open" class="md:hidden text-textonav focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16" />
+      <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <!-- Navegación desktop -->
+  <nav class="hidden md:flex space-x-4">
+    <a href="#" class="hover:bg-naranja hover:rounded-md p-2 text-textonav font-medium">Home</a>
+    <a href="#" class="hover:bg-naranja hover:rounded-md p-2 text-textonav font-medium">Sobre Nosotros</a>
+    <a href="#" class="hover:bg-naranja hover:rounded-md p-2 text-textonav font-medium">Que Ofrecemos?</a>
+    <a href="https://wa.link/k1ktf5" target="_blank" class="hover:bg-naranja/90 bg-naranja rounded-md p-2 text-textonav font-medium">Contáctense</a>
+  </nav>
+
+  <!-- Navegación mobile -->
+  <nav x-show="open"
+  x-transition:enter="transition ease-out duration-500"
+  x-transition:enter-start="opacity-0 transform -translate-y-2"
+  x-transition:enter-end="opacity-100 transform translate-y-0"
+  x-transition:leave="transition ease-in duration-200"
+  x-transition:leave-start="opacity-100 transform translate-y-0"
+  x-transition:leave-end="opacity-0 transform -translate-y-2"
+  class="absolute top-full left-0 w-full bg-texto flex flex-col items-start p-4 space-y-2 md:hidden z-50 shadow-md">
+
+    <a href="#" class="hover:bg-naranja hover:rounded-md p-2 text-textonav font-medium w-full">Home</a>
+    <a href="#" class="hover:bg-naranja hover:rounded-md p-2 text-textonav font-medium w-full">Sobre Nosotros</a>
+    <a href="#" class="hover:bg-naranja hover:rounded-md p-2 text-textonav font-medium w-full">Que Ofrecemos?</a>
+    <a href="https://wa.link/k1ktf5" target="_blank" class="hover:bg-naranja/90 bg-naranja rounded-md p-2 text-textonav font-medium w-full">Contáctense</a>
+  </nav>
+</header>
+
