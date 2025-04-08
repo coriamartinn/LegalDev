@@ -3,16 +3,17 @@ import Typed from 'typed.js';
 import html from "./components/main.html?raw";
 import { setupCounter } from './counter.js'
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faArrowRight, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faFacebook, faWhatsapp  } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faArrowRight, faArrowDown, faPhone } from '@fortawesome/free-solid-svg-icons';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import Swal from 'sweetalert2'
 
 import { CountUp } from 'countup.js';
 
 
 // Agregás los íconos que vas a usar
-library.add(faInstagram, faFacebook, faEnvelope, faArrowRight, faArrowDown);
+library.add(faInstagram, faFacebook, faEnvelope, faArrowRight, faArrowDown, faWhatsapp, faPhone);
 
 // Esto los inyecta automáticamente en el DOM (carga los íconos cuando encuentra el tag <i>)
 dom.watch();
@@ -53,6 +54,8 @@ fetch('/src/components/sobrenos.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('footer-container').innerHTML = html;
+        // Una vez insertado el footer, activamos el acordeón
+        initFAQAccordion();
   });
 
 
@@ -140,7 +143,7 @@ fetch('/src/components/sobrenos.html')
 function iniciarContadoresCuandoSeanVisibles() {
   const targets = [
     { id: 'clientes', end: 5000, prefix: '+', duration: 4 },
-    { id: 'experiencias', end: 30, prefix: '+', duration: 4 },
+    { id: 'experiencias', end: 25, prefix: '+', duration: 4 },
     { id: 'tasa', end: 97, suffix: '%', duration: 4 }
   ];
 
@@ -177,3 +180,60 @@ function iniciarContadoresCuandoSeanVisibles() {
   });
 }
 
+
+
+// FUNCIONALIDAD DEL ACORDEÓN
+function initFAQAccordion() {
+  const questions = document.querySelectorAll('.faq-question');
+
+  questions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const icon = question.querySelector('span');
+
+      const isOpen = !answer.classList.contains('hidden');
+
+      // Toggle respuesta
+      answer.classList.toggle('hidden');
+
+      // Cambiar el símbolo + / –
+      icon.textContent = isOpen ? '+' : '–';
+    });
+  });
+}
+
+
+// SWEET ALERT: PORQUE ELEGIRNOS
+
+Swal.fire({
+  title: '<strong style=" font-weight: 800; color: #F5E7C6;">¿POR QUÉ ELEGIRNOS?</strong>',
+  html: `
+    <p style="color: #F5E7C6;  text-transform: uppercase; font-size: 1rem; margin-bottom: 1.2rem;">
+      Asistencia legal clara y eficaz.<br>
+      Defensa comprometida en cada etapa del proceso.
+    </p>
+    <button id="saberMasBtn" style="
+      background-color: #F5E7C6;
+      border: 3px solid black;
+      padding: 8px 16px;
+      font-family: monospace;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      box-shadow: 5px 5px 0 black;
+      transition: all 0.2s ease;
+    ">SABER MÁS</button>
+  `,
+  showConfirmButton: false,
+  background: '#FF6D1F', // Naranja fuerte
+  color: '#222',
+  customClass: {
+    popup: 'rounded-xl p-6',
+  },
+  didOpen: () => {
+    document.getElementById('saberMasBtn').addEventListener('click', () => {
+      Swal.close();
+      // Podés redirigir o abrir otra modal si querés
+    });
+  }
+});

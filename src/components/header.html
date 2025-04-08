@@ -1,8 +1,6 @@
-
-
 <header class="bg-texto px-6 md:px-20 py-4 flex items-center justify-between shadow-md h-18 relative" x-data="{ open: false }">
   <!-- Logo -->
-  <a class="text-2xl text-textonav font-bold"><img class="w-14 h-14 cursor-pointer" src="./src/assets/images/PNG-LOGO-BEIGE.png" alt="Logo"></a>
+  <a href="#header-container" class="text-2xl text-textonav font-bold"><img class="w-14 h-14 cursor-pointer" src="./src/assets/images/PNG-LOGO-BEIGE.png" alt="Logo"></a>
 
   <!-- Botón menú hamburguesa (visible solo en mobile) -->
   <button @click="open = !open" class="md:hidden text-textonav focus:outline-none">
@@ -16,20 +14,24 @@
 
   <!-- Navegación desktop -->
   <nav class="hidden md:flex space-x-4">
-    <a href="#" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+    <a href="#header-container" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
       Home
     </a>
     
-    <a href="#" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+    <a href="#sobrenos-container" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
       Sobre Nosotros
     </a>
     
-    <a href="#" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black  bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
-      Qué Ofrecemos?
+    <a href="#servicios-container" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black  bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+      nuestros servicios
+    </a>
+
+    <a href="#footer-container" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black  bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+      Información y contacto
     </a>
     
     <a href="https://wa.link/k1ktf5" target="_blank" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-naranja/90 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
-      Contáctense
+      CONSULTA AL WPP
     </a>
     
   </nav>
@@ -53,14 +55,54 @@
   </a>
   
   <a href="#" class="inline-block rounded-xl px-3 py-1 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
-    Qué Ofrecemos?
+    Nuestros servicios
   </a>
   
   <a href="https://wa.link/k1ktf5" target="_blank" class="inline-block rounded-xl px-3 py-1 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000] hover:bg-naranja/90 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
-    Contáctense
+    CONSULTA AL WPP
   </a>
   
   
   </nav>
-</header>
 
+<!-- 📌 Menú lateral que aparece al hacer scroll -->
+<div x-data="{ show: false }" x-init="
+  window.addEventListener('scroll', () => {
+    show = window.scrollY > 300;
+  });
+" x-show="show"
+x-transition
+class="fixed top-1/4 left-4 z-40 flex-col space-y-3 hidden lg:flex"
+>
+
+  <a href="#header-container" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] 
+    transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] 
+    hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto 
+    active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+    Home
+  </a>
+
+  <a href="#sobrenos-container" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] 
+    transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] 
+    hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto 
+    active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+    Sobre Nosotros
+  </a>
+
+  <a href="#servicios-container" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] 
+    transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] 
+    hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto 
+    active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+    Nuestros servicios
+  </a>
+
+  <a href="#footer-container" class="inline-block rounded-xl px-3 py-2 border-[2px] border-black bg-naranja text-textonav text-sm font-semibold shadow-[2px_2px_0_#000] 
+    transition-all duration-200 hover:translate-x-[1px] hover:translate-y-[1px] 
+    hover:shadow-[1px_1px_0_#000] hover:bg-background hover:text-texto 
+    active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+    Información y contacto
+  </a>
+
+</div>
+
+</header>

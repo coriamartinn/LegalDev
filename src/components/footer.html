@@ -1,50 +1,212 @@
 <footer class="bg-texto w-full">
-    <!-- Sección principal del footer -->
-    <section class="w-full px-6 py-10 flex flex-col lg:flex-row justify-between items-center gap-10 mx-auto">
-      
-      <!-- Redes sociales -->
-      <div class="flex flex-row lg:flex-col items-center h-full lg:items-center lg:justify-around lg:h-[300px] gap-10 w-[300px]">
-        <a class="text-textonav hover:text-naranja transition" href="#"><i class="fab fa-instagram text-3xl m-2.5"></i>Instagram</a>
-        <a class="text-textonav hover:text-naranja transition" href="#"><i class="fab fa-facebook text-3xl m-2.5"></i>Facebook</a>
-        <a class="text-textonav hover:text-naranja transition" href="#"><i class="fab fa-linkedin text-3xl m-2.5"></i>Linkedin</a>
-      </div>
-  
-<!-- Ubicación con mapa estilo brutalista -->
-<div class="flex-1 min-w-[280px] max-w-xl">
-    <h2 class="text-xl font-bold mb-4 text-textonav text-center">Ubicación</h2>
-    
-    <div class="bg-naranja border-[3px]  border-black shadow-[12px_12px_0_#000] translate-x-[-6px] translate-y-[-6px] transition-all duration-300 hover:translate-x-[-6px] hover:translate-y-[-6px] rounded-xl overflow-hidden mb-3">
-      <div id="map" class="w-full h-[250px] md:h-[350px]"></div>
-    </div>
-  
-    <p class="font-light opacity-50 text-textonav text-center">Lavalle 695, B1878 Quilmes, Provincia de Buenos Aires</p>
-  </div>
-  
-  
-      <!-- Sección adicional (vacía o futura info) -->
-      <div class="w-[280px] h-full bg-textonav text-texto border-[3px] border-black shadow-[12px_12px_0px_black] rounded-xl transition-all duration-300 p-6 flex flex-col items-center justify-start">
-        <h3 class="text-md  font-extrabold select-none uppercase tracking-wider">Preguntas frecuentes</h3>
-        <p class="text-sm mt-1 font-medium select-none text-center pt-3">¿Cómo sé si necesito un abogado?</p>
-        <p class="text-sm mt-1 font-medium select-none text-center pt-3">¿Cuánto cuesta una consulta inicial?</p>
-        <p class="text-sm mt-1 font-medium select-none text-center pt-3">¿Qué tipo de casos manejan?</p>
-        <p class="text-sm mt-1 font-medium select-none text-center pt-3">¿Cuánto dura un proceso legal?</p>
-        <p class="text-sm mt-1 font-medium select-none text-center pt-3">¿Qué documentos necesito para iniciar un trámite legal?</p>
-        <p class="text-sm mt-1 font-medium select-none text-center pt-3">¿Puedo comunicarme con mi abogado fácilmente?</p>
-        <p class="text-sm mt-1 font-medium select-none text-center pt-3">¿Qué pasa si pierdo el juicio?</p>
-        <p class="text-sm mt-1 font-medium select-none text-center pt-3">¿Pueden representarme en todo el país?</p>
-        <p class="text-sm mt-1 font-medium select-none text-center pt-3">¿Qué diferencia a su estudio de otros abogados?</p>
-      </div>
-    </section>
-  
-    <!-- Línea inferior -->
-    <section class="w-full border-t border-white/10 py-4 px-6">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left">
-        <p class="text-textonav text-sm font-light">© 2025 Doctores Rodriguez y Asociados</p>
-        <p class="text-textonav text-sm">
-          Desarrollado por 
-          <a href="#" class="text-red-600 hover:underline">CoriaDev</a>
+  <!-- Sección principal del footer -->
+  <section class="w-full px-6 py-10">
+    <div
+      class="max-w-7xl mx-auto flex flex-col lg:flex-row balance-between items-start gap-10"
+    >
+      <!-- Ubicación con mapa estilo brutalista -->
+      <div
+        class="flex-1 min-w-[280px] max-w-xl mx-auto flex flex-col items-center"
+      >
+        <h2 class="text-xl font-bold mb-4 text-textonav text-center">
+          Ubicación
+        </h2>
+        <div
+          class="bg-naranja border-[3px] border-black shadow-[12px_12px_0_#000] translate-x-[-6px] translate-y-[-6px] transition-all duration-300 hover:translate-x-[-6px] hover:translate-y-[-6px] rounded-xl overflow-hidden mb-3 w-full"
+        >
+          <div id="map" class="w-full h-[250px] md:h-[350px]"></div>
+        </div>
+        <p class="font-light opacity-50 text-textonav text-center">
+          Lavalle 695, B1878 Quilmes, Provincia de Buenos Aires
         </p>
+        <p class="font-light opacity-50 text-textonav text-center">
+          <i class="fas fa-envelope mr-1"></i
+          >consultas@estudiodresrodriguez.com.ar
+        </p>
+        <p class="font-light opacity-50 text-textonav text-center">
+          <i class="fas fa-phone mr-1"></i>(+54) 11 4444-5555
+        </p>
+        <!-- Redes sociales -->
+        <div
+          class="flex flex-row lg:flex-row items-center lg:items-center lg:balance-around mt-2"
+        >
+          <a class="text-textonav hover:text-naranja transition" href="#"
+            ><i class="fab fa-instagram text-3xl m-2.5"></i>Instagram</a
+          >
+          <a class="text-textonav hover:text-naranja transition" href="#"
+            ><i class="fab fa-facebook text-3xl m-2.5"></i>Facebook</a
+          >
+          <a class="text-textonav hover:text-naranja transition" href="#"
+            ><i class="fab fa-linkedin text-3xl m-2.5"></i>Linkedin</a
+          >
+        </div>
       </div>
-    </section>
-  </footer>
-  
+
+      <!-- Preguntas frecuentes -->
+      <div
+        class="w-full lg:w-[500px] bg-textonav text-textonav border-[3px] border-black shadow-[12px_12px_0px_black] rounded-xl transition-all duration-300 p-6 flex flex-col items-center balance-start"
+      >
+        <h3
+          class="text-md font-extrabold select-none uppercase tracking-wider text-center"
+        >
+          Preguntas frecuentes
+        </h3>
+
+        <div class="w-full mt-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- Reutilizamos esta estructura para cada pregunta -->
+          <div class="border-b border-black pb-2">
+            <button
+              class="bg-naranja faq-question w-full text-left text-md font-medium flex balance-between items-center hover:bg-textonav hover:text-texto uppercase"
+            >
+              ¿Cómo sé si necesito un abogado?
+              <span class="text-lg font-bold">+</span>
+            </button>
+            <div
+              class="faq-answer hidden text-sm mt-2 text-balance text-texto uppercase"
+            >
+              Si tenés dudas legales, conflictos o querés prevenir problemas,
+              consultar a un abogado es lo ideal.
+            </div>
+          </div>
+
+          <div class="border-b border-black pb-2">
+            <button
+              class="bg-naranja faq-question w-full text-left text-md font-medium flex balance-between items-center hover:bg-textonav hover:text-texto uppercase"
+            >
+              ¿Cuánto cuesta una consulta inicial?
+              <span class="text-lg font-bold">+</span>
+            </button>
+            <div
+              class="faq-answer hidden text-sm mt-2 text-balance text-texto uppercase"
+            >
+              La primera consulta suele tener un costo fijo o incluso ser
+              gratuita, según el caso.
+            </div>
+          </div>
+
+          <div class="border-b border-black pb-2">
+            <button
+              class="bg-naranja faq-question w-full text-left text-md font-medium flex balance-between items-center hover:bg-textonav hover:text-texto uppercase"
+            >
+              ¿Qué tipo de casos manejan?
+              <span class="text-lg font-bold">+</span>
+            </button>
+            <div
+              class="faq-answer hidden text-sm mt-2 text-balance text-texto uppercase"
+            >
+              Derecho civil, penal, laboral, familiar, entre otros.
+            </div>
+          </div>
+
+          <div class="border-b border-black pb-2">
+            <button
+              class="bg-naranja faq-question w-full text-left text-md font-medium flex balance-between items-center hover:bg-textonav hover:text-texto uppercase"
+            >
+              ¿Cuánto dura un proceso legal?
+              <span class="text-lg font-bold">+</span>
+            </button>
+            <div
+              class="faq-answer hidden text-sm mt-2 text-balance text-texto uppercase"
+            >
+              Depende del tipo de caso, la carga judicial y la colaboración de
+              las partes.
+            </div>
+          </div>
+
+          <div class="border-b border-black pb-2">
+            <button
+              class="bg-naranja faq-question w-full text-left text-md font-medium flex balance-between items-center hover:bg-textonav hover:text-texto uppercase"
+            >
+              ¿Qué documentos necesito para iniciar un trámite legal?
+              <span class="text-lg font-bold">+</span>
+            </button>
+            <div
+              class="faq-answer hidden text-sm mt-2 text-balance text-texto uppercase"
+            >
+              DNI, documentación relacionada con el caso (contratos, denuncias,
+              recibos, etc.).
+            </div>
+          </div>
+
+          <div class="border-b border-black pb-2">
+            <button
+              class="bg-naranja faq-question w-full text-left text-md font-medium flex balance-between items-center hover:bg-textonav hover:text-texto uppercase"
+            >
+              ¿Puedo comunicarme con mi abogado fácilmente?
+              <span class="text-lg font-bold">+</span>
+            </button>
+            <div
+              class="faq-answer hidden text-sm mt-2 text-balance text-texto uppercase"
+            >
+              Sí, ofrecemos canales digitales y atención personalizada.
+            </div>
+          </div>
+
+          <div class="border-b border-black pb-2">
+            <button
+              class="bg-naranja faq-question w-full text-left text-md font-medium flex balance-between items-center hover:bg-textonav hover:text-texto uppercase"
+            >
+              ¿Qué pasa si pierdo el juicio?
+              <span class="text-lg font-bold">+</span>
+            </button>
+            <div
+              class="faq-answer hidden text-sm mt-2 text-balance text-texto uppercase"
+            >
+              Se analizan las consecuencias y alternativas legales posibles.
+              Cada caso es diferente.
+            </div>
+          </div>
+
+          <div class="border-b border-black pb-2">
+            <button
+              class="bg-naranja faq-question w-full text-left text-md font-medium flex balance-between items-center hover:bg-textonav hover:text-texto uppercase"
+            >
+              ¿Pueden representarme en todo el país?
+              <span class="text-lg font-bold">+</span>
+            </button>
+            <div
+              class="faq-answer hidden text-sm mt-2 text-balance text-texto uppercase"
+            >
+              Sí, contamos con red de profesionales para actuar en diferentes
+              provincias.
+            </div>
+          </div>
+
+          <div class="border-b border-black pb-2 col-span-full">
+            <button
+              class="bg-naranja faq-question w-full text-left text-md font-medium flex balance-between items-center hover:bg-textonav hover:text-texto uppercase"
+            >
+              ¿Qué diferencia a su estudio de otros abogados?
+              <span class="text-lg font-bold">+</span>
+            </button>
+            <div
+              class="faq-answer hidden text-sm mt-2 text-balance text-texto uppercase"
+            >
+              Atención personalizada, compromiso real y trayectoria en diversos
+              casos legales.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Línea inferior -->
+  <section class="w-full border-t border-white/10 py-4 px-6">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left"
+    >
+      <p class="text-textonav text-md font-light">
+        © 2025 Doctores Rodriguez y Asociados
+      </p>
+      <p class="text-textonav text-md">
+        Desarrollado por
+        <a
+          href="https://coriadev-porfolio.netlify.app/"
+          class="text-red-600 hover:underline"
+          >CoriaDev</a
+        >
+      </p>
+    </div>
+  </section>
+</footer>
