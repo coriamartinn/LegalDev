@@ -7,7 +7,8 @@ export default {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['Space Grotesk', 'sans-serif'],
+          sans: ['Nunito', 'sans-serif'],       // para textos y navegación
+          title: ['Poppins', 'sans-serif'],     // para títulos
         },
       },
     },

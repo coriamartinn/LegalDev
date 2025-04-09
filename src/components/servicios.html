@@ -1,82 +1,377 @@
-<section class="w-full h-dvh border-t border-texto py-4 px-6 mb-20">
-    <!-- Título -->
-    <div class="flex flex-col justify-center items-center gap-4 px-5 py-6">
-      <h2 class="text-texto font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-5 tracking-wider">
-        Nuestros Servicios
-      </h2>
-      <hr class="border-t-2 border-texto w-15 sm:w-25 md:w-35 lg:w-45 mx-auto mb-4" />
-    </div>
-  
-    <!-- Grid centrado con 6 tarjetas -->
-    <div class="max-w-7xl mx-auto px-4 mt-10">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
-        
-        <!-- Tarjeta 1 -->
-        <div class="w-[300px] h-[250px] rounded-xl -translate-x-[6px] -translate-y-[6px] bg-naranja border-[3px] border-black shadow-[12px_12px_0_#000] overflow-hidden transition-all duration-300 hover:-translate-y-[6px]">
-          <div class="w-full h-8 bg-textonav text-texto font-extrabold text-ml px-3 py-1 border-b-[3px] border-black tracking-wider">ACCIDENTES LABORALES</div>
-          <div class="p-3 text-ml tracking-wide uppercase font-semibold text-textonav">Asesoramiento ante accidentes in-itinere, mala atención médica de la ART o enfermedades laborales. Defendé tus derechos con respaldo legal y médico especializado.
-            <button class="mt-3 px-3 py-1 border-[3px] border-black bg-naranja shadow-[3px_3px_0_#000] font-bold transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none">
-              Saber más
-            </button>
-          </div>
+<section class="w-full border-t border-texto py-4 px-6 mb-20">
+  <!-- Título -->
+  <div class="flex flex-col justify-center items-center gap-4 px-5 py-6">
+    <h2
+      class="text-texto font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-5 tracking-wider"
+    >
+      Nuestros Servicios
+    </h2>
+    <hr
+      class="border-t-2 border-texto w-15 sm:w-25 md:w-35 lg:w-45 mx-auto mb-4"
+    />
+  </div>
+
+  <!-- Grid de tarjetas -->
+  <div class="max-w-7xl mx-auto px-4 mt-10 grid grid-cols-1 gap-16">
+    <!-- TARJETA 1 -->
+    <div
+      class="w-full rounded-xl bg-textonav border-[3px] border-black shadow-[12px_12px_0_#000] transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-6 px-6 py-6"
+      >
+        <h3
+          class="text-texto font-bold text-xl md:w-1/3 uppercase text-center md:text-left"
+        >
+          Accidentes de Tránsito
+        </h3>
+        <div class="md:w-1/3 flex justify-center">
+          <img
+            src="/imagen-preview.png"
+            alt="Accidente"
+            class="max-h-[150px] object-contain"
+          />
         </div>
-  
-        <!-- Tarjeta 2 -->
-        <div class="w-[300px] h-[250px] rounded-xl -translate-x-[6px] -translate-y-[6px] bg-naranja border-[3px] border-black shadow-[12px_12px_0_#000] overflow-hidden transition-all duration-300 hover:-translate-y-[6px]">
-          <div class="w-full h-8 bg-textonav text-texto font-extrabold text-ml px-3 py-1 border-b-[3px] border-black uppercase tracking-wider">Accidentes de transito</div>
-          <div class="p-3 text-ml font-semibold text-textonav uppercase tracking-wider">
-            Asesoramiento legal personalizado tras un siniestro vial. Protegé tus derechos desde el primer momento. No firmes nada sin consultar con nuestro equipo.
-            <button class="mt-3 px-3 py-1 border-[3px] border-black bg-naranja shadow-[3px_3px_0_#000] font-bold transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase">
+        <div class="md:w-1/3 flex justify-center md:justify-end w-full">
+          <details
+            class="w-full bg-textonav text-texto p-4 rounded shadow-inner"
+            x-data="{ open: false }"
+            @toggle="open = !open"
+          >
+            <summary
+              class="cursor-pointer w-full px-4 py-2 text-center border-[3px] border-black bg-naranja text-textonav font-bold shadow-[3px_3px_0_#000] transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
+            >
               Saber más
-            </button>
-          </div>
+            </summary>
+            <div class="mt-4 text-sm leading-relaxed space-y-4">
+              <div
+                x-data="{ open1: false, open2: false, open3: false, open4: false }"
+                class="space-y-2"
+              >
+                <div>
+                  <button
+                    @click="open1 = !open1"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Qué hacer después de un accidente?</span>
+                    <span x-text="open1 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open1" x-transition class="mt-2 text-lg">
+                    Contactanos de inmediato y reuní documentación.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open2 = !open2"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Qué es un accidente in-itinere?</span>
+                    <span x-text="open2 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open2" x-transition class="mt-2 text-lg">
+                    Es el que ocurre yendo al trabajo o volviendo.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open3 = !open3"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿La ART debe responder?</span>
+                    <span x-text="open3 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open3" x-transition class="mt-2 text-lg">
+                    Sí, si está documentado correctamente.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open4 = !open4"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Qué documentación necesito?</span>
+                    <span x-text="open4 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open4" x-transition class="mt-2 text-lg">
+                    Certificados médicos, policiales y testigos si hay.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
         </div>
-  
-        <!-- Tarjeta 3 -->
-        <div class="w-[300px] h-[250px] rounded-xl -translate-x-[6px] -translate-y-[6px] bg-naranja border-[3px] border-black shadow-[12px_12px_0_#000] overflow-hidden transition-all duration-300 hover:-translate-y-[6px]">
-          <div class="w-full h-8 bg-textonav text-texto font-extrabold text-ml px-3 py-1 border-b-[3px] border-black uppercase tracking-wider">Despidos</div>
-          <div class="p-3 text-ml font-semibold text-textonav uppercase tracking-wider">
-            Asistencia legal inmediata ante despidos. Enviá los telegramas correctos desde el inicio para proteger tus derechos y lograr una indemnización justa.
-            <button class="mt-3 px-3 py-1 border-[3px] border-black bg-naranja shadow-[3px_3px_0_#000] font-bold transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background  hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase">
-              Saber más
-            </button>
-          </div>
-        </div>
-  
-        <!-- Tarjeta 4 -->
-        <div class="w-[300px] h-[250px] rounded-xl -translate-x-[6px] -translate-y-[6px] bg-naranja border-[3px] border-black shadow-[12px_12px_0_#000] overflow-hidden transition-all duration-300 hover:-translate-y-[6px]">
-          <div class="w-full h-8 bg-textonav text-texto font-extrabold text-ml px-3 py-1 border-b-[3px] border-black uppercase tracking-wider">Derecho Penal</div>
-          <div class="p-3 text-ml font-semibold text-textonav uppercase tracking-wider">
-            Asesoramiento y defensa penal integral.
-            <button class="mt-3 px-3 py-1 border-[3px] border-black bg-naranja shadow-[3px_3px_0_#000] font-bold transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase">
-              Saber más
-            </button>
-          </div>
-        </div>
-  
-        <!-- Tarjeta 5 
-        <div class="w-[300px] h-[250px] rounded-xl -translate-x-[6px] -translate-y-[6px] bg-naranja border-[3px] border-black shadow-[12px_12px_0_#000] overflow-hidden transition-all duration-300 hover:-translate-y-[6px]">
-          <div class="w-full h-8 bg-textonav text-texto font-extrabold text-ml px-3 py-1 border-b-[3px] border-black uppercase tracking-wider">Contratos</div>
-          <div class="p-3 text-ml font-semibold text-textonav uppercase tracking-wider">
-            Redacción y revisión de contratos legales.
-            <button class="mt-3 px-3 py-1 border-[3px] border-black bg-naranja shadow-[3px_3px_0_#000] font-bold transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase">
-              Saber más
-            </button>
-          </div>
-        </div> -->
-  
-        <!-- Tarjeta 6 -->
-        <div class="w-[300px] h-[250px] rounded-xl -translate-x-[6px] -translate-y-[6px] bg-naranja border-[3px] border-black shadow-[12px_12px_0_#000] overflow-hidden transition-all duration-300 hover:-translate-y-[6px]">
-          <div class="w-full h-8 bg-textonav text-texto font-extrabold text-ml px-3 py-1 border-b-[3px] border-black uppercase tracking-wider">Sucesiones</div>
-          <div class="p-3 text-ml font-semibold text-textonav uppercase tracking-wider">
-            Tramitación de herencias y testamentos.
-            <button class="mt-3 px-3 py-1 border-[3px] border-black bg-naranja shadow-[3px_3px_0_#000] font-bold transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase">
-              Saber más
-            </button>
-          </div>
-        </div>
-  
       </div>
     </div>
-  </section>
-  
+
+    <!-- TARJETA 2 -->
+    <div
+      class="w-full rounded-xl bg-textonav border-[3px] border-black shadow-[12px_12px_0_#000] transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-6 px-6 py-6"
+      >
+        <h3
+          class="text-texto font-bold text-xl md:w-1/3 uppercase text-center md:text-left"
+        >
+          Despidos
+        </h3>
+        <div class="md:w-1/3 flex justify-center">
+          <img
+            src="/imagen-preview.png"
+            alt="Despidos"
+            class="max-h-[150px] object-contain"
+          />
+        </div>
+        <div class="md:w-1/3 flex justify-center md:justify-end w-full">
+          <details
+            class="w-full bg-textonav text-texto p-4 rounded shadow-inner"
+            x-data="{ open: false }"
+            @toggle="open = !open"
+          >
+            <summary
+              class="cursor-pointer w-full px-4 py-2 text-center border-[3px] border-black bg-naranja text-textonav font-bold shadow-[3px_3px_0_#000] transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
+            >
+              Saber más
+            </summary>
+            <div class="mt-4 text-sm leading-relaxed space-y-4">
+              <div
+                x-data="{ open1: false, open2: false, open3: false, open4: false }"
+                class="space-y-2"
+              >
+                <div>
+                  <button
+                    @click="open1 = !open1"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Qué telegramas debo enviar?</span>
+                    <span x-text="open1 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open1" x-transition class="mt-2 text-lg">
+                    Te guiamos paso a paso con modelos validados.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open2 = !open2"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Qué indemnización me corresponde?</span>
+                    <span x-text="open2 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open2" x-transition class="mt-2 text-lg">
+                    Depende del tiempo trabajado y causa del despido.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open3 = !open3"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Puedo reclamar si renuncié?</span>
+                    <span x-text="open3 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open3" x-transition class="mt-2 text-lg">
+                    Sí, si fue forzada o bajo presión indebida.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open4 = !open4"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Qué pruebas necesito?</span>
+                    <span x-text="open4 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open4" x-transition class="mt-2 text-lg">
+                    Documentación laboral, recibos, y testigos si hay.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- TARJETA 3 -->
+    <div
+      class="w-full rounded-xl bg-textonav border-[3px] border-black shadow-[12px_12px_0_#000] transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-6 px-6 py-6"
+      >
+        <h3
+          class="text-texto font-bold text-xl md:w-1/3 uppercase text-center md:text-left"
+        >
+          Jubilaciones y Pensiones
+        </h3>
+        <div class="md:w-1/3 flex justify-center">
+          <img
+            src="/imagen-preview.png"
+            alt="Jubilaciones"
+            class="max-h-[150px] object-contain"
+          />
+        </div>
+        <div class="md:w-1/3 flex justify-center md:justify-end w-full">
+          <details
+            class="w-full bg-textonav text-texto p-4 rounded shadow-inner"
+            x-data="{ open: false }"
+            @toggle="open = !open"
+          >
+            <summary
+              class="cursor-pointer w-full px-4 py-2 text-center border-[3px] border-black bg-naranja text-textonav font-bold shadow-[3px_3px_0_#000] transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
+            >
+              Saber más
+            </summary>
+            <div class="mt-4 text-sm leading-relaxed space-y-4">
+              <div
+                x-data="{ open1: false, open2: false, open3: false, open4: false }"
+                class="space-y-2"
+              >
+                <div>
+                  <button
+                    @click="open1 = !open1"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Cuántos años necesito?</span>
+                    <span x-text="open1 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open1" x-transition class="mt-2 text-lg">
+                    Generalmente 30 años de aportes y edad mínima.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open2 = !open2"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Puedo jubilarme sin aportes?</span>
+                    <span x-text="open2 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open2" x-transition class="mt-2 text-lg">
+                    Sí, con moratorias según tu situación.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open3 = !open3"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Qué es una pensión?</span>
+                    <span x-text="open3 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open3" x-transition class="mt-2 text-lg">
+                    Es el beneficio que recibe un familiar del titular
+                    fallecido.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open4 = !open4"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Cuánto demora el trámite?</span>
+                    <span x-text="open4 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open4" x-transition class="mt-2 text-lg">
+                    Varía según el expediente, pero hacemos seguimiento.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- TARJETA 4 -->
+    <div
+      class="w-full rounded-xl bg-textonav border-[3px] border-black shadow-[12px_12px_0_#000] transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-6 px-6 py-6"
+      >
+        <h3
+          class="text-texto font-bold text-xl md:w-1/3 uppercase text-center md:text-left"
+        >
+          Familia y Sucesiones
+        </h3>
+        <div class="md:w-1/3 flex justify-center">
+          <img
+            src="/imagen-preview.png"
+            alt="Familia"
+            class="max-h-[150px] object-contain"
+          />
+        </div>
+        <div class="md:w-1/3 flex justify-center md:justify-end w-full">
+          <details
+            class="w-full bg-textonav text-texto p-4 rounded shadow-inner"
+            x-data="{ open: false }"
+            @toggle="open = !open"
+          >
+            <summary
+              class="cursor-pointer w-full px-4 py-2 text-center border-[3px] border-black bg-naranja text-textonav font-bold shadow-[3px_3px_0_#000] transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
+            >
+              Saber más
+            </summary>
+            <div class="mt-4 text-sm leading-relaxed space-y-4">
+              <div
+                x-data="{ open1: false, open2: false, open3: false, open4: false }"
+                class="space-y-2"
+              >
+                <div>
+                  <button
+                    @click="open1 = !open1"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Qué necesito para divorciarme?</span>
+                    <span x-text="open1 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open1" x-transition class="mt-2 text-lg">
+                    Solo tu DNI y voluntad de hacerlo.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open2 = !open2"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Cómo se tramita una sucesión?</span>
+                    <span x-text="open2 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open2" x-transition class="mt-2 text-lg">
+                    Con actas, DNI y partidas, lo iniciamos en juzgado.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open3 = !open3"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Quién se queda con la tenencia?</span>
+                    <span x-text="open3 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open3" x-transition class="mt-2 text-lg">
+                    Se analiza lo mejor para el menor.
+                  </div>
+                </div>
+                <div>
+                  <button
+                    @click="open4 = !open4"
+                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
+                  >
+                    <span>¿Puedo reclamar alimentos?</span>
+                    <span x-text="open4 ? '-' : '+'"></span>
+                  </button>
+                  <div x-show="open4" x-transition class="mt-2 text-lg">
+                    Sí, incluso de forma retroactiva si corresponde.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

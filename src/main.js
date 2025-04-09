@@ -3,8 +3,8 @@ import Typed from 'typed.js';
 import html from "./components/main.html?raw";
 import { setupCounter } from './counter.js'
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faInstagram, faFacebook, faWhatsapp  } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faArrowRight, faArrowDown, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faFacebook, faWhatsapp,   } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faArrowRight, faArrowDown, faPhone, faCarBurst } from '@fortawesome/free-solid-svg-icons';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import Swal from 'sweetalert2'
@@ -13,7 +13,7 @@ import { CountUp } from 'countup.js';
 
 
 // Agregás los íconos que vas a usar
-library.add(faInstagram, faFacebook, faEnvelope, faArrowRight, faArrowDown, faWhatsapp, faPhone);
+library.add(faInstagram, faFacebook, faEnvelope, faArrowRight, faArrowDown, faWhatsapp, faPhone, faCarBurst);
 
 // Esto los inyecta automáticamente en el DOM (carga los íconos cuando encuentra el tag <i>)
 dom.watch();
