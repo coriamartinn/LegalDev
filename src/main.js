@@ -16,23 +16,23 @@ library.add(faInstagram, faFacebook, faEnvelope, faArrowRight, faArrowDown, faWh
 // Esto los inyecta automáticamente en el DOM (carga los íconos cuando encuentra el tag <i>)
 dom.watch();
 
-// header
+ // header
 
-fetch('/src/components/header.html')
+fetch('/components/header.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('header-container').innerHTML = html;
-  });
+  }); 
 
 // main
-  fetch('/src/components/main.html')
+  fetch('/components/main.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('main-container').innerHTML = html;
   });
 
 // sobre nosotros
-fetch('/src/components/sobrenos.html')
+fetch('/components/sobrenos.html')
 .then(res => res.text())
 .then(html => {
   document.getElementById('sobrenos-container').innerHTML = html;
@@ -41,31 +41,20 @@ fetch('/src/components/sobrenos.html')
 });
 
 // servicios
-  fetch('/src/components/servicios.html')
+  fetch('/components/servicios.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('servicios-container').innerHTML = html;
   });
 
 // footer
-  fetch('/src/components/footer.html')
+  fetch('/components/footer.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('footer-container').innerHTML = html;
         // Una vez insertado el footer, activamos el acordeón
         initFAQAccordion();
   });
-
-
-  console.log('Cargando header...');
-  fetch('/src/components/header.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('header-container').innerHTML = html;
-      console.log('Header cargado con éxito');
-    })
-    .catch(err => console.error('Error cargando header:', err));
-  
 
   
 
