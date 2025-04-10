@@ -1,7 +1,5 @@
 import './style.css'
 import Typed from 'typed.js';
-import html from "./components/main.html?raw";
-import { setupCounter } from './counter.js'
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faInstagram, faFacebook, faWhatsapp,   } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faArrowRight, faArrowDown, faPhone, faCarBurst } from '@fortawesome/free-solid-svg-icons';
