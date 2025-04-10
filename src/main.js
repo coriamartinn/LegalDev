@@ -1,7 +1,7 @@
 import './style.css'
 import Typed from 'typed.js';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faInstagram, faFacebook, faWhatsapp,   } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faFacebook, faWhatsapp   } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faArrowRight, faArrowDown, faPhone, faCarBurst } from '@fortawesome/free-solid-svg-icons';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
