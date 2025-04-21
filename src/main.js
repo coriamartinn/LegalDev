@@ -59,12 +59,12 @@ fetch('/components/sobrenos.html')
   
 
 // FUNCION DONDE TIPEA LOS TEXTOS EN EL MAIN
-    function iniciarTyped() {
+    /* function iniciarTyped() {
       const el = document.getElementById("texto-dinamico");
       if (!el) return;
     
       new Typed(el, {
-        strings: ["Derecho Penal", "Despidos", "Accidentes Laborales", "Accidentes de Tránsito"],
+        strings: ["Asesorarte", "Fijar estrategias", "Alcanzar los objetivos buscados"],
         typeSpeed: 80,
         backSpeed: 100,
         backDelay: 1500,
@@ -72,7 +72,7 @@ fetch('/components/sobrenos.html')
         showCursor: true,
         cursorChar: "|",
       });
-    }
+    } */
     
     // Esperar a que el componente esté en el DOM
     const observer = new MutationObserver(() => {
@@ -129,7 +129,7 @@ fetch('/components/sobrenos.html')
 // 🧩 Lógica de animación con IntersectionObserver
 function iniciarContadoresCuandoSeanVisibles() {
   const targets = [
-    { id: 'clientes', end: 5000, prefix: '+', duration: 4 },
+    { id: 'clientes', end: 6520, prefix: '+', duration: 4 },
     { id: 'experiencias', end: 25, prefix: '+', duration: 4 },
     { id: 'tasa', end: 97, suffix: '%', duration: 4 }
   ];
@@ -193,27 +193,26 @@ function initFAQAccordion() {
 // SWEET ALERT: PORQUE ELEGIRNOS
 
 Swal.fire({
-  title: '<strong style=" font-weight: 800; color: #F5E7C6;">¿POR QUÉ ELEGIRNOS?</strong>',
+  title: '<strong style=" font-weight: 800; color: #D9CEC5;">¿POR QUÉ ELEGIRNOS?</strong>',
   html: `
-    <p style="color: #F5E7C6;  text-transform: uppercase; font-size: 1rem; margin-bottom: 1.2rem;">
+    <p style="color: #D9CEC5;  text-transform: uppercase; font-size: 1rem; margin-bottom: 1.2rem;">
       Asistencia legal clara y eficaz.<br>
       Defensa comprometida en cada etapa del proceso.
     </p>
     <button id="saberMasBtn" style="
-      background-color: #F5E7C6;
-      border: 3px solid black;
+      background-color: #731D2C;
       padding: 8px 16px;
       font-family: monospace;
       font-weight: bold;
       border-radius: 0.5rem;
       cursor: pointer;
-      box-shadow: 5px 5px 0 black;
       transition: all 0.2s ease;
+      border: 2px solid;
     ">SABER MÁS</button>
   `,
   showConfirmButton: false,
-  background: '#FF6D1F', // Naranja fuerte
-  color: '#222',
+  background: '#731D2C', // Bordo
+  color: '#D9CEC5',
   customClass: {
     popup: 'rounded-xl p-6',
   },

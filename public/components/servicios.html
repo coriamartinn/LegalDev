@@ -11,437 +11,219 @@
     />
   </div>
 
-  <!-- Grid de tarjetas -->
-  <div class="max-w-7xl mx-auto px-4 mt-10 grid grid-cols-1 gap-16">
+  <!-- CONTENEDOR GRID -->
+  <div class="grid grid-cols-1 md:grid-cols-1 gap-6 w-full max-w-6xl mx-auto">
     <!-- TARJETA 1 -->
-    <div
-      class="w-full rounded-xl bg-textonav border-[3px] border-black shadow-[12px_12px_0_#000] transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
-    >
+    <div class="space-y-4" x-data="{ open: false }">
       <div
-        class="flex flex-col md:flex-row items-center justify-between gap-6 px-6 py-6"
+        class="rounded-xl bg-bgheader transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
       >
-        <h3
-          class="text-texto font-bold text-xl md:w-1/3 uppercase text-center md:text-left"
-        >
-          Accidentes Laborales
-        </h3>
-        <div class="md:w-1/3 flex justify-center">
-          <i class="fas fa-car-burst text-9xl text-texto text-center"></i>
-        </div>
-        <div class="md:w-1/3 flex justify-center md:justify-end w-full">
-          <details
-            class="w-full bg-textonav text-texto p-4 rounded"
-            x-data="{ open: false }"
-            @toggle="open = !open"
+        <div class="flex flex-col items-center justify-between gap-6 px-6 py-6">
+          <h3 class="text-background font-bold text-xl uppercase text-center">
+            Accidentes y enfermedades laborales
+          </h3>
+          <i class="fas fa-car-burst text-7xl text-background"></i>
+          <button
+            @click="open = !open"
+            class="w-full px-4 py-2 bg-naranja text-background font-bold transition-all hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
           >
-            <summary
-              class="cursor-pointer w-full px-4 py-2 text-center border-[3px] border-black bg-naranja text-textonav font-bold shadow-[3px_3px_0_#000] transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
-            >
-              Saber más
-            </summary>
-            <div class="mt-4 text-sm leading-relaxed space-y-4">
-              <div
-                x-data="{ open1: false, open2: false, open3: false, open4: false }"
-                class="space-y-2"
-              >
-                <div>
-                  <button
-                    @click="open1 = !open1"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué hacer después de un accidente?</span>
-                    <span x-text="open1 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open1" x-transition class="mt-2 text-lg">
-                    Contactanos de inmediato y reuní documentación.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open2 = !open2"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué es un accidente in-itinere?</span>
-                    <span x-text="open2 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open2" x-transition class="mt-2 text-lg">
-                    Es el que ocurre yendo al trabajo o volviendo.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open3 = !open3"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿La ART debe responder?</span>
-                    <span x-text="open3 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open3" x-transition class="mt-2 text-lg">
-                    Sí, si está documentado correctamente.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open4 = !open4"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué documentación necesito?</span>
-                    <span x-text="open4 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open4" x-transition class="mt-2 text-lg">
-                    Certificados médicos, policiales y testigos si hay.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </details>
+            Saber más
+          </button>
+        </div>
+      </div>
+      <div
+        x-show="open"
+        x-transition
+        class="bg-bgheader text-texto p-4 rounded space-y-4"
+      >
+        <div
+          x-data="{ open1: false }"
+          class="flex flex-col justify-center items-center"
+        >
+          <p class="text-lg text-justify font-medium text-background prose-p">
+            Nunca un hecho es igual a otro; puede tener similitudes, pero jamás
+            va a ser idéntico; así como tampoco es igual la evolución médica que
+            tenga una persona respecto de otra; por eso es importante que nos
+            llames y nos cuentes qué es lo que te pasó. Nuestros abogados junto
+            al grupo de médicos legistas que nos ayudan te brindarán el mejor
+            asesoramiento. A continuación, te contamos algunas situaciones que
+            pueden suceder, pero sólo a modo de ejemplo. Nuestro objetivo es
+            tratar a cada cliente en forma personal, entendiendo que quien sufre
+            un accidente padece, además de la lesión, angustias por no saber
+            cuál será su futuro, y merece que se lo escuche y se le explique con
+            detalles cuáles son sus derechos y cuál es la acción más conveniente
+            a seguir para su caso.
+          </p>
+          <a href="" class=" m-3 px-4 py-2 rounded-xl text-3xl border-2 bg-naranja  text-background font-bold hover:bg-background hover:border-[2px] hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none cursor-pointer">
+            <i class="fab fa-whatsapp text-xl mr-0.5 text-center text-[green]"></i>
+              CONSULTANOS
+            </a>
         </div>
       </div>
     </div>
 
+
     <!-- TARJETA 2 -->
-    <div
-      class="w-full rounded-xl bg-textonav border-[3px] border-black shadow-[12px_12px_0_#000] transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
-    >
+    <div class="space-y-4" x-data="{ open: false }">
       <div
-        class="flex flex-col md:flex-row items-center justify-between gap-6 px-6 py-6"
+        class="rounded-xl bg-bgheader transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
       >
-        <h3
-          class="text-texto font-bold text-xl md:w-1/3 uppercase text-center md:text-left"
-        >
-          Accidentes de tránsito
-        </h3>
-        <div class="md:w-1/3 flex justify-center">
-          <i class="fas fa-car-burst text-9xl text-texto text-center"></i>
-        </div>
-        <div class="md:w-1/3 flex justify-center md:justify-end w-full">
-          <details
-            class="w-full bg-textonav text-texto p-4 rounded"
-            x-data="{ open: false }"
-            @toggle="open = !open"
+        <div class="flex flex-col items-center justify-between gap-6 px-6 py-6">
+          <h3 class="text-background font-bold text-xl uppercase text-center">
+            Accidentes de transito
+          </h3>
+          <i class="fas fa-car-burst text-7xl text-background"></i>
+          <button
+            @click="open = !open"
+            class="w-full px-4 py-2 bg-naranja text-background font-bold transition-all hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
           >
-            <summary
-              class="cursor-pointer w-full px-4 py-2 text-center border-[3px] border-black bg-naranja text-textonav font-bold shadow-[3px_3px_0_#000] transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
-            >
-              Saber más
-            </summary>
-            <div class="mt-4 text-sm leading-relaxed space-y-4">
-              <div
-                x-data="{ open1: false, open2: false, open3: false, open4: false }"
-                class="space-y-2"
-              >
-                <div>
-                  <button
-                    @click="open1 = !open1"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué hacer después de un accidente?</span>
-                    <span x-text="open1 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open1" x-transition class="mt-2 text-lg">
-                    Contactanos de inmediato y reuní documentación.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open2 = !open2"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué es un accidente in-itinere?</span>
-                    <span x-text="open2 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open2" x-transition class="mt-2 text-lg">
-                    Es el que ocurre yendo al trabajo o volviendo.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open3 = !open3"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿La ART debe responder?</span>
-                    <span x-text="open3 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open3" x-transition class="mt-2 text-lg">
-                    Sí, si está documentado correctamente.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open4 = !open4"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué documentación necesito?</span>
-                    <span x-text="open4 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open4" x-transition class="mt-2 text-lg">
-                    Certificados médicos, policiales y testigos si hay.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </details>
+            Saber más
+          </button>
+        </div>
+      </div>
+      <div
+        x-show="open"
+        x-transition
+        class="bg-bgheader text-texto p-4 rounded space-y-4"
+      >
+        <div
+          x-data="{ open1: false }"
+          class="flex flex-col justify-center items-center"
+        >
+          <p class="text-lg text-justify font-medium text-background prose-p">
+            Durante más de 25 años nos hemos dedicado a realizar reclamos por los daños y perjuicios sufridos por víctimas de accidentes de tránsito. Podemos afirmar que no existen dos casos iguales. Las consecuencias de cada siniestro varían, y deben ser tratadas en forma personalizada. 
+            Nos comprometemos a escucharte, asesorarte y brindarte el más eficaz servicio para que puedas percibir tu debida indemnización. 
+            Somos conscientes de que sufrís, que tenés expectativas y que estamos obligados a ser objetivos en nuestro asesoramiento. Ponete en contacto con nosotros y arreglaremos una entrevista, personal o a través de videollamada. 
+          </p>
+          <a href="" class=" m-3 px-4 py-2 rounded-xl text-3xl border-2 bg-naranja  text-background font-bold hover:bg-background hover:border-[2px] hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none cursor-pointer">
+            <i class="fab fa-whatsapp text-xl mr-0.5 text-center text-[green]"></i>
+              CONSULTANOS
+            </a>
         </div>
       </div>
     </div>
 
     <!-- TARJETA 3 -->
-    <div
-      class="w-full rounded-xl bg-textonav border-[3px] border-black shadow-[12px_12px_0_#000] transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
-    >
+    <div class="space-y-4" x-data="{ open: false }">
       <div
-        class="flex flex-col md:flex-row items-center justify-between gap-6 px-6 py-6"
+        class="rounded-xl bg-bgheader transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
       >
-        <h3
-          class="text-texto font-bold text-xl md:w-1/3 uppercase text-center md:text-left"
-        >
-          Despidos
-        </h3>
-        <div class="md:w-1/3 flex justify-center">
-          <i class="fas fa-car-burst text-9xl text-texto text-center"></i>
-        </div>
-        <div class="md:w-1/3 flex justify-center md:justify-end w-full">
-          <details
-            class="w-full bg-textonav text-texto p-4 rounded"
-            x-data="{ open: false }"
-            @toggle="open = !open"
+        <div class="flex flex-col items-center justify-between gap-6 px-6 py-6">
+          <h3 class="text-background font-bold text-xl uppercase text-center">
+            despidos
+          </h3>
+          <i class="fas fa-car-burst text-7xl text-background"></i>
+          <button
+            @click="open = !open"
+            class="w-full px-4 py-2 bg-naranja text-background font-bold transition-all hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
           >
-            <summary
-              class="cursor-pointer w-full px-4 py-2 text-center border-[3px] border-black bg-naranja text-textonav font-bold shadow-[3px_3px_0_#000] transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
-            >
-              Saber más
-            </summary>
-            <div class="mt-4 text-sm leading-relaxed space-y-4">
-              <div
-                x-data="{ open1: false, open2: false, open3: false, open4: false }"
-                class="space-y-2"
-              >
-                <div>
-                  <button
-                    @click="open1 = !open1"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué telegramas debo enviar?</span>
-                    <span x-text="open1 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open1" x-transition class="mt-2 text-lg">
-                    Te guiamos paso a paso con modelos validados.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open2 = !open2"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué indemnización me corresponde?</span>
-                    <span x-text="open2 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open2" x-transition class="mt-2 text-lg">
-                    Depende del tiempo trabajado y causa del despido.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open3 = !open3"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Puedo reclamar si renuncié?</span>
-                    <span x-text="open3 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open3" x-transition class="mt-2 text-lg">
-                    Sí, si fue forzada o bajo presión indebida.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open4 = !open4"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué pruebas necesito?</span>
-                    <span x-text="open4 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open4" x-transition class="mt-2 text-lg">
-                    Documentación laboral, recibos, y testigos si hay.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </details>
+            Saber más
+          </button>
+        </div>
+      </div>
+      <div
+        x-show="open"
+        x-transition
+        class="bg-bgheader text-texto p-4 rounded space-y-4"
+      >
+        <div
+          x-data="{ open1: false }"
+          class="flex flex-col justify-center items-center"
+        >
+          <p class="text-lg text-justify font-medium text-background prose-p">
+            La cantidad de situaciones que pueden producirse en una relación laboral son muy diversas; cada caso en particular debe ser analizado por un profesional especializado en Derecho del Trabajo. 
+            Lo mejor que podés hacer es llamarnos, mantener una entrevista, comentarnos tu caso particular y te vamos a poder dar el mejor consejo.
+          </p>
+          <a href="" class=" m-3 px-4 py-2 rounded-xl text-3xl border-2 bg-naranja  text-background font-bold hover:bg-background hover:border-[2px] hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none cursor-pointer">
+            <i class="fab fa-whatsapp text-xl mr-0.5 text-center text-[green]"></i>
+              CONSULTANOS
+            </a>
         </div>
       </div>
     </div>
 
     <!-- TARJETA 4 -->
-    <div
-      class="w-full rounded-xl bg-textonav border-[3px] border-black shadow-[12px_12px_0_#000] transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
-    >
+    <div class="space-y-4" x-data="{ open: false }">
       <div
-        class="flex flex-col md:flex-row items-center justify-between gap-6 px-6 py-6"
+        class="rounded-xl bg-bgheader transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
       >
-        <h3
-          class="text-texto font-bold text-xl md:w-1/3 uppercase text-center md:text-left"
-        >
-          Derecho Penal
-        </h3>
-        <div class="md:w-1/3 flex justify-center">
-          <i class="fas fa-car-burst text-9xl text-texto text-center"></i>
-        </div>
-        <div class="md:w-1/3 flex justify-center md:justify-end w-full">
-          <details
-            class="w-full bg-textonav text-texto p-4 rounded"
-            x-data="{ open: false }"
-            @toggle="open = !open"
+        <div class="flex flex-col items-center justify-between gap-6 px-6 py-6">
+          <h3 class="text-background font-bold text-xl uppercase text-center">
+            Derecho Penal
+          </h3>
+          <i class="fas fa-car-burst text-7xl text-background"></i>
+          <button
+            @click="open = !open"
+            class="w-full px-4 py-2 bg-naranja text-background font-bold transition-all hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
           >
-            <summary
-              class="cursor-pointer w-full px-4 py-2 text-center border-[3px] border-black bg-naranja text-textonav font-bold shadow-[3px_3px_0_#000] transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
-            >
-              Saber más
-            </summary>
-            <div class="mt-4 text-sm leading-relaxed space-y-4">
-              <div
-                x-data="{ open1: false, open2: false, open3: false, open4: false }"
-                class="space-y-2"
-              >
-                <div>
-                  <button
-                    @click="open1 = !open1"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Cuántos años necesito?</span>
-                    <span x-text="open1 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open1" x-transition class="mt-2 text-lg">
-                    Generalmente 30 años de aportes y edad mínima.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open2 = !open2"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Puedo jubilarme sin aportes?</span>
-                    <span x-text="open2 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open2" x-transition class="mt-2 text-lg">
-                    Sí, con moratorias según tu situación.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open3 = !open3"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué es una pensión?</span>
-                    <span x-text="open3 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open3" x-transition class="mt-2 text-lg">
-                    Es el beneficio que recibe un familiar del titular
-                    fallecido.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open4 = !open4"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Cuánto demora el trámite?</span>
-                    <span x-text="open4 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open4" x-transition class="mt-2 text-lg">
-                    Varía según el expediente, pero hacemos seguimiento.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </details>
+            Saber más
+          </button>
         </div>
       </div>
+      <div
+        x-show="open"
+        x-transition
+        class="bg-bgheader text-texto p-4 rounded space-y-4"
+      >
+        <div
+          x-data="{ open1: false }"
+          class="flex flex-col justify-center items-center"
+        >
+          <p class="text-lg text-justify font-medium text-background prose-p">
+            El departamento de derecho penal esta a cargo de las Dras. Laura FECCHINO y Andrea NOVELLO, quienes cuentan con una larga experiencia actuando ante la Justicia Federal, Nacional y Provincial; tanto durante la etapa de investigación como de debate oral, como defensoras o querellantes. Comunicate, concretá una entrevista y te contamos nuestra forma de trabajo.
+          </p>
+          <a href="" class=" m-3 px-4 py-2 rounded-xl text-3xl border-2 bg-naranja  text-background font-bold hover:bg-background hover:border-[2px] hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none cursor-pointer">
+            <i class="fab fa-whatsapp text-xl mr-0.5 text-center text-[green]"></i>
+              CONSULTANOS
+            </a>
+        </div>
+      </div>
+
+      <div class="space-y-4" x-data="{ open: false }">
+        <div
+          class="rounded-xl bg-bgheader transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
+        >
+          <div class="flex flex-col items-center justify-between gap-6 px-6 py-6">
+            <h3 class="text-background font-bold text-xl uppercase text-center">
+              SUCESIONES
+            </h3>
+            <i class="fas fa-car-burst text-7xl text-background"></i>
+            <button
+              @click="open = !open"
+              class="w-full px-4 py-2 bg-naranja text-background font-bold transition-all hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
+            >
+              Saber más
+            </button>
+          </div>
+        </div>
+        <div
+          x-show="open"
+          x-transition
+          class="bg-bgheader text-texto p-4 rounded space-y-4"
+        >
+          <div
+            x-data="{ open1: false }"
+            class="flex flex-col justify-center items-center"
+          >
+            <p class="text-lg text-justify font-medium text-background prose-p">
+              Al fallecer un familiar y éste dejar bienes, la cantidad de preguntas que te pueden surgir son muchas, tanto en relación a si tenés derecho sobre lo que dejó, como qué hacer frente a otro heredero que dispone de éstos como si fuera el único con derecho. Lo peor que podés hacer es no hacer nada. 
+              Si bien muchas veces puede ser un proceso doloroso por el ser querido fallecido, lo cierto es que resulta indispensable para que cada uno de los herederos pueda disponer del porcentaje que le corresponde, iniciar el proceso sucesorio. No existe otra manera de ser declarado heredero que a través de ese proceso. Consúltanos y te contamos cuáles son tus derechos y cuáles los costos de nuestra intervención.
+            </p>
+            <a href="" class=" m-3 px-4 py-2 rounded-xl text-3xl border-2 bg-naranja  text-background font-bold hover:bg-background hover:border-[2px] hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none cursor-pointer">
+              <i class="fab fa-whatsapp text-xl mr-0.5 text-center text-[green]"></i>
+                CONSULTANOS
+              </a>
+          </div>
+        </div>
     </div>
 
-    <!-- TARJETA 5 -->
-    <div
-      class="w-full rounded-xl bg-textonav border-[3px] border-black shadow-[12px_12px_0_#000] transition-all duration-300 hover:-translate-y-[6px] overflow-hidden"
-    >
-      <div
-        class="flex flex-col md:flex-row items-center justify-between gap-6 px-6 py-6"
-      >
-        <h3
-          class="text-texto font-bold text-xl md:w-1/3 uppercase text-center md:text-left"
-        >
-          Sucesiones
-        </h3>
-        <div class="md:w-1/3 flex justify-center">
-          <i class="fas fa-car-burst text-9xl text-texto text-center"></i>
-        </div>
-        <div class="md:w-1/3 flex justify-center md:justify-end w-full">
-          <details
-            class="w-full bg-textonav text-texto p-4 rounded"
-            x-data="{ open: false }"
-            @toggle="open = !open"
-          >
-            <summary
-              class="cursor-pointer w-full px-4 py-2 text-center border-[3px] border-black bg-naranja text-textonav font-bold shadow-[3px_3px_0_#000] transition-all duration-300 hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_#000] hover:bg-background hover:text-texto active:translate-x-[3px] active:translate-y-[3px] active:shadow-none uppercase"
-            >
-              Saber más
-            </summary>
-            <div class="mt-4 text-sm leading-relaxed space-y-4">
-              <div
-                x-data="{ open1: false, open2: false, open3: false, open4: false }"
-                class="space-y-2"
-              >
-                <div>
-                  <button
-                    @click="open1 = !open1"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Qué necesito para divorciarme?</span>
-                    <span x-text="open1 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open1" x-transition class="mt-2 text-lg">
-                    Solo tu DNI y voluntad de hacerlo.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open2 = !open2"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Cómo se tramita una sucesión?</span>
-                    <span x-text="open2 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open2" x-transition class="mt-2 text-lg">
-                    Con actas, DNI y partidas, lo iniciamos en juzgado.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open3 = !open3"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Quién se queda con la tenencia?</span>
-                    <span x-text="open3 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open3" x-transition class="mt-2 text-lg">
-                    Se analiza lo mejor para el menor.
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="open4 = !open4"
-                    class="flex justify-between items-center w-full text-left font-semibold bg-textonav text-texto text-xl"
-                  >
-                    <span>¿Puedo reclamar alimentos?</span>
-                    <span x-text="open4 ? '-' : '+'"></span>
-                  </button>
-                  <div x-show="open4" x-transition class="mt-2 text-lg">
-                    Sí, incluso de forma retroactiva si corresponde.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </details>
-        </div>
-      </div>
-    </div>
+<!-- COLORES PAGINA 
+BACKGROUND: 
+TEXTO: 
+TARJETAS: 
+TEXTO-SECUNDARIO: 
+-->
+
+
   </div>
 </section>

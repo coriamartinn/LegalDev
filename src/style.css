@@ -1,13 +1,15 @@
 @config "../tailwind.config.js";
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   
 
-  --color-background: #FAF3E1;   /* #FAF3E1 */
-  --color-textonav: #F5E7C6;         /* #F5E7C6 */
-  --color-naranja: #FF6D1F;       /* #FF6D1F */
-  --color-texto: #222;      /* #161616 */
+  --color-background: #D9CEC5;
+  --color-texto: #122E40;   /* #FFF3DF */
+  --color-textonav: #1E4E59;         /* #F5E7C6 */
+  --color-naranja: #731D2C;       /* #FF6D1F *//* #222 */
+  --color-bgheader: #73675D;      /* #222 */
 }
 
 /* TUS ESTILOS PERSONALIZADOS VAN DESPUÉS DE @theme Y @import */

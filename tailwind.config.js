@@ -7,8 +7,8 @@ export default {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['Nunito', 'sans-serif'],       // para textos y navegación
-          title: ['Poppins', 'sans-serif'],     // para títulos
+          sans: ['Monserrat', 'sans-serif'],       // para textos y navegación
+          title: ['Monserrat', 'sans-serif'],     // para títulos
         },
       },
     },
