@@ -72,7 +72,7 @@ fetch('/components/sobrenos.html')
         showCursor: true,
         cursorChar: "|",
       });
-    } */
+    } 
     
     // Esperar a que el componente esté en el DOM
     const observer = new MutationObserver(() => {
@@ -84,7 +84,7 @@ fetch('/components/sobrenos.html')
     });
     
     observer.observe(document.body, { childList: true, subtree: true });
-
+*/
 
 
 
@@ -129,9 +129,9 @@ fetch('/components/sobrenos.html')
 // 🧩 Lógica de animación con IntersectionObserver
 function iniciarContadoresCuandoSeanVisibles() {
   const targets = [
-    { id: 'clientes', end: 6520, prefix: '+', duration: 4 },
+    //{ id: 'clientes', end: 6520, prefix: '+', duration: 4 },
     { id: 'experiencias', end: 25, prefix: '+', duration: 4 },
-    { id: 'tasa', end: 97, suffix: '%', duration: 4 }
+    //{ id: 'tasa', end: 97, suffix: '%', duration: 4 }
   ];
 
   const observer = new IntersectionObserver((entries) => {
